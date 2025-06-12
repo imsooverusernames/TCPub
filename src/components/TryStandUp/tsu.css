@@ -1,0 +1,114 @@
+.tsu-section {
+    min-height: 100vh;
+    position: relative;
+    background-image: url("../../assets/images/tsu.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(2rem, 5vw, 5rem);
+    padding-top: 5rem;
+    gap: 10rem;
+}
+
+.tsu-section h3 {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.7));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin: 0;
+    text-align: center;
+    font-size: clamp(1rem, 2vw + 1rem, 2rem);
+    font-family: 'Lilita One', sans-serif;
+    align-self: center;
+}
+
+.tsu-section h1 {
+    margin: 0;
+    font-family: 'Lilita One', sans-serif;
+    text-align: center;
+    font-size: clamp(3rem, 5vw + 1rem, 5rem);
+    color: #FAD53E;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.tsu-cards {
+    display: flex;
+    align-items: stretch;
+    gap: 2rem;
+}
+
+.tsu-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    flex: 1;
+    border-radius: 20px;
+    border: 1px solid #FAD53E;
+    text-align: center;
+    background-color: rgba(23, 26, 23, 0.9);
+}
+
+.tsu-card h4 {
+    padding-inline: 1.5rem;
+    font-family: 'Asap', sans-serif;
+    letter-spacing: 1px;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+.tsu-hr {
+    width: 70%;
+    background-color: #FAD53E;
+    height: 2px;
+    margin: 1rem 0;
+    border-radius: 10px;
+}
+
+.card-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.tsu-card p {
+    padding-inline: 2rem;
+    line-height: 1.8rem;
+    font-family: 'Asap', sans-serif;
+    color: white;
+}
+
+.tsu-card a {
+    font-size: 1.5rem;
+    font-family: 'Lilita One', sans-serif;
+    background-color: #FAD53E;
+    border-radius: 20px;
+    padding: 8px;
+    width: 50%;
+    text-decoration: none;
+    color: black;
+    transition: all 0.3s ease;
+}
+
+.tsu-card a:hover {
+    color: #FAD53E;
+    background-color: #DC8209;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 940px) {
+    .tsu-cards {
+        flex-direction: column;
+    }
+
+    .tsu-header {
+        margin-bottom: -90px;
+    }
+}
