@@ -155,12 +155,12 @@ const Navbar = () => {
             onClick={toggleLanguage}
             aria-label="Toggle Language"
           >
-            <GlobeIcon className="icon" role="img" aria-hidden="true" />
+            <GlobeIcon className="icon" role="img" aria-hidden="true" focusable="false" />
             <span className="language-code">{language}</span>
           </button>
 
           <button type="button" className="svg-buttons" aria-label="Login">
-            <LoginIcon className="icon" role="img" aria-hidden="true" />
+            <LoginIcon className="icon" role="img" aria-hidden="true" focusable="false" />
           </button>
         </div>
       </nav>

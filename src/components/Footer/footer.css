@@ -12,6 +12,16 @@
     opacity: 70%;
 }
 
+.footer ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footer li {
+    list-style: none;
+    color: white;
+}
+
 .footer a {
     text-decoration: none;
     color: white;

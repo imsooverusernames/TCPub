@@ -95,19 +95,7 @@ const Contact = () => {
     setSubmissionError(null);
 
     try {
-      // const response = await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify(form),
-      // });
-
-      // if (!response.ok) {
-      //   const errorData = await response.json();
-      //   throw new Error(errorData.message || 'Failed to send message.');
-      // }
-
+      // Simulate network request
       await new Promise((resolve) => setTimeout(resolve, 1500));
 
       setSubmitted(true);
@@ -132,9 +120,15 @@ const Contact = () => {
           </div>
         ) : (
           <form className="contact-form" onSubmit={handleSubmit} noValidate>
-            <div className="fill-ins">
+            <fieldset className="fill-ins" aria-describedby="form-instructions">
+              <legend id="form-instructions" className="sr-only">
+                Please fill in your contact details and message. Fields marked
+                with * are required.
+              </legend>
               <div>
-                <label htmlFor="name-input">Hi I'm</label>
+                <label htmlFor="name-input">
+                  Hi I'm
+                </label>
                 <input
                   id="name-input"
                   type="text"
@@ -147,6 +141,7 @@ const Contact = () => {
                   aria-describedby={
                     validationErrors.name ? "name-error" : undefined
                   }
+                  autoComplete="name"
                 />
                 {validationErrors.name && (
                   <p id="name-error" className="error-message" role="alert">
@@ -155,7 +150,9 @@ const Contact = () => {
                 )}
               </div>
               <div>
-                <label htmlFor="phone-input">You can reach me at</label>
+                <label htmlFor="phone-input">
+                  You can reach me at
+                </label>
                 <input
                   id="phone-input"
                   type="tel"
@@ -168,6 +165,7 @@ const Contact = () => {
                   aria-describedby={
                     validationErrors.phone ? "phone-error" : undefined
                   }
+                  autoComplete="tel"
                 />
                 {validationErrors.phone && (
                   <p id="phone-error" className="error-message" role="alert">
@@ -176,7 +174,9 @@ const Contact = () => {
                 )}
               </div>
               <div>
-                <label htmlFor="email-input">or at </label>
+                <label htmlFor="email-input">
+                  or at
+                </label>
                 <input
                   id="email-input"
                   type="email"
@@ -189,6 +189,7 @@ const Contact = () => {
                   aria-describedby={
                     validationErrors.email ? "email-error" : undefined
                   }
+                  autoComplete="email"
                 />
                 {validationErrors.email && (
                   <p id="email-error" className="error-message" role="alert">
@@ -220,7 +221,7 @@ const Contact = () => {
                   </p>
                 )}
               </div>
-            </div>
+            </fieldset>
             <button className="send-btn" type="submit" disabled={isSubmitting}>
               {isSubmitting ? "Sending..." : "Send Message"}
               <Send className="send-icon" role="img" aria-label="Send icon" />

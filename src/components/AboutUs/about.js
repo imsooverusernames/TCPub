@@ -6,25 +6,25 @@ import "./about.css";
 
 const About = () => {
   return (
-    <div className="about-section" id="about">
-      <div className="about-text">
-        <h1>About Us</h1>
+    <section className="about-section" id="about" aria-labelledby="about-title">
+      <article className="about-text">
+        <h1 id="about-title">About Us</h1>
 
         {/* Mobile layout only (visible <950px) */}
-        <div className="features-mobile">
-          <div className="feature">
+        <ul className="features-mobile" role="list">
+          <li className="feature">
             <img src={CalendarSvg} alt="Calendar icon" />
             <p>Daily&nbsp;Events</p>
-          </div>
-          <div className="feature">
+          </li>
+          <li className="feature">
             <img src={LngSvg} alt="Languages icon" />
             <p>Multilingual</p>
-          </div>
-          <div className="feature">
+          </li>
+          <li className="feature">
             <img src={MoneySvg} alt="Free events icon" />
             <p>Free&nbsp;Events</p>
-          </div>
-        </div>
+          </li>
+        </ul>
 
         <p>
           Welcome to The Comedy Pub — Vienna’s one and only home for full-time
@@ -48,25 +48,26 @@ const About = () => {
             Read&nbsp;More&nbsp;→
           </a>
         </p>
-      </div>
-      <div className="about-display">
+      </article>
+
+      <aside className="about-display" aria-label="Additional features and images">
         {/* Desktop layout only (visible >950px) */}
-        <div className="features">
-          <div className="feature">
+        <ul className="features" role="list">
+          <li className="feature">
             <img src={CalendarSvg} alt="Calendar icon" />
             <p>Daily&nbsp;Events</p>
-          </div>
-          <div className="feature">
+          </li>
+          <li className="feature">
             <img src={LngSvg} alt="Languages icon" />
             <p>Multilingual</p>
-          </div>
-          <div className="feature">
+          </li>
+          <li className="feature">
             <img src={MoneySvg} alt="Free events icon" />
             <p>Free&nbsp;Events</p>
-          </div>
-        </div>
-      </div>
-    </div>
+          </li>
+        </ul>
+      </aside>
+    </section>
   );
 };
 

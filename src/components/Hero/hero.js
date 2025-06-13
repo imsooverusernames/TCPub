@@ -4,43 +4,52 @@ import Location from "../../assets/svg/Hero_svg/Location.svg";
 import HeroVid from "../../assets/video/vorschau.mp4";
 import { Link } from "react-router-dom";
 
+const scrollToSection = (id) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 const Hero = () => {
   return (
     <section className="hero">
       <video autoPlay muted loop playsInline className="hero-video">
         <source src={HeroVid} type="video/mp4" />
-        Your browser does not support the video tag.
+        <p>Your browser does not support the video tag.</p>
       </video>
-      <img className="logobig" src={LogoBig} />
+
+      <img className="logobig" src={LogoBig} alt="Comedy Club Logo" />
+
       <div className="location">
-        <img src={Location} />
+        <img src={Location} alt="Location pin icon" />
         <p>Kettenbrückengasse 7, 1050 Vienna</p>
       </div>
+
       <div className="cta-buttons">
         <Link to="/contact" className="cta-link-button">
           Contact
         </Link>
+
         <button
-          onClick={() =>
-            document
-              .getElementById("open-mic")
-              ?.scrollIntoView({ behavior: "smooth" })
-          }
+          aria-label="Scroll to open mic section"
+          onClick={() => scrollToSection("open-mic")}
         >
           Join an Open Mic
         </button>
+
         <button
           id="full-btn"
-          onClick={() =>
-            document
-              .getElementById("events")
-              ?.scrollIntoView({ behavior: "smooth" })
-          }
+          aria-label="Scroll to events section"
+          onClick={() => scrollToSection("events")}
         >
           Events
         </button>
       </div>
-      <p>VIENNA'S ONLY DEDICATED STAND-UP COMEDY CLUB</p>
+
+      <p>
+        VIENNA'S ONLY DEDICATED STAND-UP COMEDY CLUB
+      </p>
     </section>
   );
 };
