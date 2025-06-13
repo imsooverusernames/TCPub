@@ -5,12 +5,12 @@ const TryStandUp = () => {
   return (
     <div className="tsu-section" id="open-mic">
       <div className="tsu-header">
-        <h3>Got Jokes?</h3>
-        <h1>Try Stand-Up at our Pub</h1>
+        <h1>Got Jokes?</h1>
+        <h2>Try Stand-Up at our Pub</h2>
       </div>
       <div className="tsu-cards">
         <div className="tsu-card">
-          <h4>Ready to give stand-up a shot?</h4>
+          <h3>Ready to give stand-up a shot?</h3>
           <hr className="tsu-hr"/>
           <p>
             Our <em>5-week</em> beginner-friendly workshop led by Terence, a professional
@@ -26,7 +26,7 @@ const TryStandUp = () => {
         </div>
         <div className="tsu-card">
           <div className="card-header">
-            <h4>Already got the jokes?</h4>
+            <h3>Already got the jokes?</h3>
             <hr className="tsu-hr"/>
           </div>
           <p>
