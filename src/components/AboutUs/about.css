@@ -7,6 +7,12 @@
     min-height: 100vh;
 }
 
+.about-section ul {
+  padding-left: 0;
+  margin-left: 0;
+  list-style: none;
+}
+
 .about-text {
     background: linear-gradient(to bottom right, #009E57, #00492D);
     display: flex;
@@ -62,13 +68,12 @@
 .features-mobile {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: stretch;
   gap: clamp(0.5rem, 2vw, 2rem);
   width: 80%;
   margin-top: clamp(1rem, 4vw, 3rem);
   margin-bottom: 40px;
-
 }
 
 .feature {

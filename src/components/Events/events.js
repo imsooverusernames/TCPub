@@ -23,10 +23,10 @@ const EventCard = ({ event }) => (
         </div>
       </div>
     </header>
-    <div>
-      <h5>{event.title}</h5>
+    <div className="event-description">
+      <h3>{event.title}</h3>
       <p>
-        {event.description}{" "}
+        <span className="truncate-text">{event.description}{" "}</span>
         <Link to={`/events/${event.id}`}>Read&nbsp;More&nbsp;→</Link>
       </p>
     </div>
@@ -64,7 +64,7 @@ const Events = () => {
       time: "18:00",
       language: "English",
       priceType: "paid",
-      description: "Join us for a tech panel discussion with local experts.",
+      description: "Join us for  usdnnfeu dmsapdmw g rtbmp0x gdj bojfd fldgjnrsivrj boregrwlfeslknkhfg  esrf epfs pesmfopesmfpersmgk pesfmsepofk  erpfsjrh  ero gr grgore rgrmg rgtz mu k iju h fg dh tohgmfhjt gtb a tech panel  usdnnfeu dmsapdmw g rtbmp0x gdj bojfd fldgjnrsivrj boregrwlfeslknkhfg  esrf epfs pesmfopesmfpersmgk pesfmsepofk  erpfsjrh  ero gr grgore rgrmg rgtz mu k iju h fg dh tohgmfhjt gtb a tech panel discussion with local  usdnnfeu dmsapdmw g rtbmp0x gdj bojfd fldgjnrsivrj boregrwlfeslknkhfg  esrf epfs pesmfopesmfpersmgk pesfmsepofk  erpfsjrh  ero gr grgore rgrmg rgtz mu k iju h fg dh tohgmfhjt gtb a tech panel discussion with local  discussion with local experts.",
       img: TestImg,
     },
     {
@@ -84,7 +84,7 @@ const Events = () => {
       time: "18:00",
       language: "English",
       priceType: "paid",
-      description: "Join us for a tech panel discussion with local experts.",
+      description: "Join us ispekadnwka ndwaodowndwoa dwoan iwa dwaiu diwa diwa diuwa duiwa duiwaogrgprspfepofeswo fnesoa fesofespfesoipiefpioessedaöodkiasndm for a tech panel discussion with local experts.",
       img: TestImg,
     },
   ];
@@ -135,7 +135,7 @@ const Events = () => {
 
       {/* Anticipated Events */}
       <div className="event-display">
-        <h3>Anticipated One-Offs</h3>
+        <h2>Anticipated One-Offs</h2>
         <div className="events">
           {anticipatedEvents.map((event) => (
             <EventCard key={event.id} event={event} />

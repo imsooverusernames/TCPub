@@ -26,21 +26,18 @@
   background: linear-gradient(to bottom, rgba(23, 26, 23, 1), rgba(23, 26, 23, 0.8));
   border-radius: 10px;
   width: 100%;
-  overflow-x: auto;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
   padding-bottom: 20px;
-  scrollbar-width: thin;
-  scrollbar-color: #FAD53E rgb(23, 26, 23);
   margin-top: 2rem;
 }
 
 .filter-btn.active {
   color: #FAD53E;
+  cursor: default;
 }
 
+
 /* ========== Event Header Anticipated One-Offs ========== */
-.event-display h3 {
+.event-display h2 {
   justify-self: center;
   font-family: 'Lilita One', sans-serif;
   color: #FAD53E;
@@ -63,7 +60,7 @@
   margin: 1rem;
 }
 
-.filter-btn:hover {
+.filter-btn:not(.active):hover {
   color: white;
 }
 
@@ -72,6 +69,11 @@
   display: flex;
   gap: 1rem;
   padding-inline: 1rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #FAD53E rgb(23, 26, 23);
 }
 
 /* ========== Individual Event Card ========== */
@@ -81,7 +83,7 @@
     font-family: 'Asap', sans-serif;
     justify-content: space-between;
     flex: 0 0 auto;
-    width: 300px;
+    width: 260px;
     background-color: #171A17;
     border-radius: 20px;
     box-sizing: border-box;
@@ -127,14 +129,14 @@
     width: 20px;
 }
 
-/* Card horizontal line separator */
-.event-card hr {
-  margin: 0;
-  border: 1px solid #FAD53E;
-}
 
 /* ========== Card Text Content ========== */
-.event-card h5 {
+.event-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-card h3 {
   padding-inline: 1rem;
   margin-bottom: 5px;
   font-size: 1.1em;
@@ -148,14 +150,22 @@
   line-height: 1.4;
 }
 
+.truncate-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: calc(1.4em * 4);
+}
+
 .event-card a {
     text-decoration: none;
     color: white;
 }
 
 .event-card a:hover {
-    text-decoration: none;
-    color: #666;
+    text-decoration: underline;
 }
 
 /* ========== Card Footer Layout ========== */

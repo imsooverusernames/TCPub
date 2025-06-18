@@ -9,25 +9,6 @@ import "./navbar.css";
 const Navbar = () => {
   const [language, setLanguage] = useState("EN");
   const [menuOpen, setMenuOpen] = useState(false);
-  const menuRef = useRef();
-
-
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (menuRef.current && !menuRef.current.contains(e.target)) {
-        setMenuOpen(false);
-      }
-    };
-
-    if (menuOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [menuOpen]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -107,7 +88,6 @@ const Navbar = () => {
       {/* Main Navigation */}
       <nav
         id="primary-navigation"
-        ref={menuRef}
         className={`hamburger-links ${menuOpen ? "open" : ""}`}
         aria-label="Main Navigation"
       >
