@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "../../assets/images/Logo.png";
 import { ReactComponent as GlobeIcon } from "../../assets/svg/Nav_svg/Globe.svg";
 import { ReactComponent as LoginIcon } from "../../assets/svg/Nav_svg/Login.svg";

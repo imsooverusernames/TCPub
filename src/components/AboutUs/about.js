@@ -1,4 +1,3 @@
-import AboutImg from "../../assets/images/about_img.png";
 import CalendarSvg from "../../assets/svg/About_svg/Calendar.svg";
 import LngSvg from "../../assets/svg/About_svg/Lng_svg.svg";
 import MoneySvg from "../../assets/svg/About_svg/Money.svg";
@@ -11,7 +10,7 @@ const About = () => {
         <h1 id="about-title">About Us</h1>
 
         {/* Mobile layout only (visible <950px) */}
-        <ul className="features-mobile" role="list">
+        <ul className="features-mobile">
           <li className="feature">
             <img src={CalendarSvg} alt="Calendar icon" />
             <p>Daily&nbsp;Events</p>
