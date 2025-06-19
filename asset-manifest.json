@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/tcp-frontend/static/css/main.10323864.css",
+    "main.js": "/tcp-frontend/static/js/main.73a4fb09.js",
+    "static/js/453.6d6b7092.chunk.js": "/tcp-frontend/static/js/453.6d6b7092.chunk.js",
+    "static/media/vorschau.mp4": "/tcp-frontend/static/media/vorschau.51c051ab74560fba9574.mp4",
+    "static/media/tsu.png": "/tcp-frontend/static/media/tsu.85df89234af53048ffd4.png",
+    "static/media/about_img.png": "/tcp-frontend/static/media/about_img.21863f28b940622938a9.png",
+    "static/media/test_img.png": "/tcp-frontend/static/media/test_img.eaf93ea1342b331894dd.png",
+    "static/media/LogoBig.png": "/tcp-frontend/static/media/LogoBig.675d2cbfa6169b96b8d5.png",
+    "static/media/Logo.png": "/tcp-frontend/static/media/Logo.d05ea920cf3b42cb83e3.png",
+    "static/media/Lng_svg.svg": "/tcp-frontend/static/media/Lng_svg.325c93e1784e3364378f9a7a8e6db2c8.svg",
+    "static/media/tbs.png": "/tcp-frontend/static/media/tbs.1b0c6e8bc20800050b70.png",
+    "static/media/Calendar.svg": "/tcp-frontend/static/media/Calendar.24b86da62b55a101b9f99b9e9983c098.svg",
+    "static/media/Events_Globe.svg": "/tcp-frontend/static/media/Events_Globe.ac953f95b89ee234017d32f24c2b41fd.svg",
+    "static/media/Globe.svg": "/tcp-frontend/static/media/Globe.41f75a10ee79eae05458cc69767627b9.svg",
+    "static/media/Login.svg": "/tcp-frontend/static/media/Login.56ca219299b3658a45bf958a3c97d1e9.svg",
+    "static/media/Booking.svg": "/tcp-frontend/static/media/Booking.b91b229d7926f95c427dc1ff58e8d39a.svg",
+    "static/media/Money.svg": "/tcp-frontend/static/media/Money.fb909cdff252d131c319da84013b7cee.svg",
+    "static/media/WhatsApp.svg": "/tcp-frontend/static/media/WhatsApp.c9b24ed6af1918c8ec82906644cc5d4d.svg",
+    "static/media/Send.svg": "/tcp-frontend/static/media/Send.587b1528d7f95544b6b68e32c7eddd4b.svg",
+    "static/media/Time.svg": "/tcp-frontend/static/media/Time.9bec4bb25413f5971bd212793995f9e6.svg",
+    "static/media/Location.svg": "/tcp-frontend/static/media/Location.9f5b655307711b9dd413a9644681c91b.svg",
+    "static/media/Instagram.svg": "/tcp-frontend/static/media/Instagram.5e41a2260d3000d813ed2be65535b659.svg",
+    "static/media/TikTok.svg": "/tcp-frontend/static/media/TikTok.8c2db526e037c29eb89761bc08a25f84.svg",
+    "index.html": "/tcp-frontend/index.html",
+    "static/media/Email.svg": "/tcp-frontend/static/media/Email.0d1b0fbbba2c4285d46ec27e2cf2e1f4.svg",
+    "static/media/Facebook.svg": "/tcp-frontend/static/media/Facebook.f99d10a5deb78eefbe0d61031fd0fb41.svg",
+    "static/media/link_arrow.svg": "/tcp-frontend/static/media/link_arrow.ac0ae0d7eaeb8e2f1ab6dc190ac595d2.svg",
+    "main.10323864.css.map": "/tcp-frontend/static/css/main.10323864.css.map",
+    "main.73a4fb09.js.map": "/tcp-frontend/static/js/main.73a4fb09.js.map",
+    "453.6d6b7092.chunk.js.map": "/tcp-frontend/static/js/453.6d6b7092.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.10323864.css",
+    "static/js/main.73a4fb09.js"
+  ]
+}
