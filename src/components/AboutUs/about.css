@@ -37,13 +37,13 @@
     line-height: 2.2rem;
     padding-inline: 4rem;
     color: white;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    font-weight: 600;
+    /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); */
 }
 
 .about-text a {
-    color: #DC8209;
+    color: #FAD53E;
     margin-left: 4px;
-    transition: all 0.3s ease;
 }
 
 #read-more {

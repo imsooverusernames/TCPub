@@ -5,8 +5,8 @@ const TryStandUp = () => {
   return (
     <div className="tsu-section" id="open-mic">
       <div className="tsu-header">
-        <h1>Got Jokes?</h1>
-        <h2>Try Stand-Up at our Pub</h2>
+        <h1>Got jokes?</h1>
+        <h2>Try stand-up at our pub</h2>
       </div>
       <div className="tsu-cards">
         <div className="tsu-card">
@@ -42,7 +42,7 @@ const TryStandUp = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Reserve a Spot
+            Reserve a spot
           </a>
         </div>
       </div>

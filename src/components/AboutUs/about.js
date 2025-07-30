@@ -7,7 +7,7 @@ const About = () => {
   return (
     <section className="about-section" id="about" aria-labelledby="about-title">
       <article className="about-text">
-        <h1 id="about-title">About Us</h1>
+        <h1 id="about-title">About us</h1>
 
         {/* Mobile layout only (visible <950px) */}
         <ul className="features-mobile">

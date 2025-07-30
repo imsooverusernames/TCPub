@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ReactComponent as Send } from "../../assets/svg/Contact_svg/Send.svg";
 import Email from "../../assets/svg/Contact_svg/Email.svg";
 import WhatsApp from "../../assets/svg/Contact_svg/WhatsApp.svg";
@@ -125,14 +125,14 @@ const Contact = () => {
                 Please fill in your contact details and message. Fields marked
                 with * are required.
               </legend>
-              <div>
+              <div className="input-row">
                 <label htmlFor="name-input">
                   Hi I'm
                 </label>
                 <input
                   id="name-input"
                   type="text"
-                  placeholder="Name*"
+                  placeholder="name*"
                   name="name"
                   value={form.name}
                   onChange={handleChange}
@@ -149,14 +149,14 @@ const Contact = () => {
                   </p>
                 )}
               </div>
-              <div>
+              <div className="input-row">
                 <label htmlFor="phone-input">
                   You can reach me at
                 </label>
                 <input
                   id="phone-input"
                   type="tel"
-                  placeholder="Phone*"
+                  placeholder="phone*"
                   name="phone"
                   value={form.phone}
                   onChange={handleChange}
@@ -173,14 +173,14 @@ const Contact = () => {
                   </p>
                 )}
               </div>
-              <div>
+              <div className="input-row">
                 <label htmlFor="email-input">
                   or at
                 </label>
                 <input
                   id="email-input"
                   type="email"
-                  placeholder="Email*"
+                  placeholder="e-mail*"
                   name="email"
                   value={form.email}
                   onChange={handleChange}
@@ -223,7 +223,7 @@ const Contact = () => {
               </div>
             </fieldset>
             <button className="send-btn" type="submit" disabled={isSubmitting}>
-              {isSubmitting ? "Sending..." : "Send Message"}
+              {isSubmitting ? "Sending..." : "Send message"}
               <Send className="send-icon" role="img" aria-label="Send icon" />
             </button>
             {submissionError && (
@@ -259,7 +259,7 @@ const Contact = () => {
             </a>
           ))}
           <p>
-            <i>or come say Hello at the pub</i>
+            <i>or come say hello at the pub</i>
           </p>
           <a
             key={CONTACT_LINK_LOCATION.id}

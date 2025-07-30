@@ -1,11 +1,11 @@
 import './tbs.css';
 import Tbs from "../../assets/images/tbs.png"
-import { ReactComponent as LinkArrow } from '../../assets/svg/TBS_svg/link_arrow.svg';
+import { ReactComponent as Send } from "../../assets/svg/Contact_svg/Send.svg";
 
 const Theblacksheep = () => {
     return (
         <section className='theblacksheep' aria-labelledby="tbs-heading">
-            <h2 id="tbs-heading">NEED TO FUEL YOUR BELLY LAUGHTS?</h2>
+            <h2 id="tbs-heading">Need to fuel your belly laughs?</h2>
             <h3>From drinks to food out friends at The Black Sheep got you!</h3>
             <img src={Tbs} alt="The Black Sheep logo"/>
             <nav className="tbs-links" aria-label="The Black Sheep links">
@@ -14,16 +14,16 @@ const Theblacksheep = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    View Menu
-                    <LinkArrow className="icon" role="img" aria-label="link_arrow"/>
+                    View menu
+                    <Send className="send-icon" role="img" aria-label="Send icon" />
                 </a>
                 <a
                     href="https://theblacksheep.at/"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    Visit the Bar
-                    <LinkArrow className="icon" role="img" aria-label="link_arrow"/>
+                    Visit the bar
+                    <Send className="send-icon" role="img" aria-label="Send icon" />
                 </a>
             </nav>
         </section>

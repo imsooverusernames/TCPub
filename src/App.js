@@ -13,7 +13,7 @@ import Contact from "./pages/Contact/contact";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/tcp-frontend">
       <Navbar />
       <Routes>
         <Route

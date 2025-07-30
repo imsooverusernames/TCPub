@@ -23,6 +23,7 @@
     font-size: clamp(1rem, 2vw + 1rem, 2rem);
     font-family: 'Lilita One', sans-serif;
     align-self: center;
+    word-spacing: 5px;
 }
 
 .tsu-section h2 {
