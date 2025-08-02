@@ -2,12 +2,17 @@ import CalendarSvg from "../../assets/svg/About_svg/Calendar.svg";
 import LngSvg from "../../assets/svg/About_svg/Lng_svg.svg";
 import MoneySvg from "../../assets/svg/About_svg/Money.svg";
 import "./about.css";
+import { useLanguage } from "../../context/language.context";
+import translations from "../../translations";
 
 const About = () => {
+  const { language } = useLanguage();
+  const translation = translations[language].aboutPage;
+
   return (
     <section className="about-section" id="about" aria-labelledby="about-title">
       <article className="about-text">
-        <h1 id="about-title">About us</h1>
+        <h1 id="about-title">{translation.heading}</h1>
 
         {/* Mobile layout only (visible <950px) */}
         <ul className="features-mobile">
@@ -26,8 +31,7 @@ const About = () => {
         </ul>
 
         <p>
-          Welcome to The Comedy Pub — Vienna’s one and only home for full-time
-          funny business! Tucked away at{" "}
+          {translation.intro}{" "}
           <a
             href="https://maps.app.goo.gl/xk4nw7d9bYEoKptbA"
             target="_blank"
@@ -35,16 +39,12 @@ const About = () => {
           >
             Kettenbrückengasse 7
           </a>
-          , we’re proud to be the city’s first and only dedicated stand-up
-          comedy club. <br />
-          <br /> Get ready for a night of belly laughs, brilliant comedians, and
-          an atmosphere that’s all about fun. Our stage features a handpicked
-          lineup of comic talent, from up-and-coming jokesters to seasoned pros,
-          all bringing their best to keep you laughing from start to finish.
-          Whether you're a local or just passing through, there's always
-          something (and someone) worth laughing at.{" "}
+          , {translation.firstClub}
+          <br />
+          <br />
+          {translation.comedyExperience}{" "}
           <a id="read-more" href="/">
-            Read&nbsp;More&nbsp;→
+            {translation.readMore}
           </a>
         </p>
       </article>
@@ -54,15 +54,15 @@ const About = () => {
         <ul className="features" role="list">
           <li className="feature">
             <img src={CalendarSvg} alt="Calendar icon" />
-            <p>Daily&nbsp;Events</p>
+            <p>{translation.dailyEvents}</p>
           </li>
           <li className="feature">
             <img src={LngSvg} alt="Languages icon" />
-            <p>Multilingual</p>
+            <p>{translation.multilingual}</p>
           </li>
           <li className="feature">
             <img src={MoneySvg} alt="Free events icon" />
-            <p>Free&nbsp;Events</p>
+            <p>{translation.freeEvents}</p>
           </li>
         </ul>
       </aside>

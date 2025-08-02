@@ -10,29 +10,41 @@ import TryStandUp from "./components/TryStandUp/tsu";
 // Pages
 import FAQ from "./pages/FAQ/faq";
 import Contact from "./pages/Contact/contact";
+import { LanguageContext } from "./context/language.context";
+import { useState } from "react";
+
 
 function App() {
+  const [language, setLanguage] = useState("en");
+
+  const toggleLanguage = () => {
+    setLanguage((prev) => (prev === "en" ? "de" : "en"));
+  };
+
+
   return (
-    <Router basename="/tcp-frontend">
-      <Navbar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero />
-              <Events />
-              <TheBlackSheep />
-              <About />
-              <TryStandUp />
-            </>
-          }
-        />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/faq" element={<FAQ />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <LanguageContext.Provider value={{ language, setLanguage, toggleLanguage }}>
+      <Router basename="/tcp-frontend">
+        <Navbar onLanguageChange={toggleLanguage} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <Events />
+                <TheBlackSheep />
+                <About />
+                <TryStandUp />
+              </>
+            }
+          />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/faq" element={<FAQ />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </LanguageContext.Provider>
   );
 }
 

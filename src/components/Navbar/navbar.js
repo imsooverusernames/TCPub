@@ -5,10 +5,14 @@ import { ReactComponent as LoginIcon } from "../../assets/svg/Nav_svg/Login.svg"
 import { Link, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import "./navbar.css";
+import translations from "../../translations";
+import { useLanguage } from "../../context/language.context";
 
-const Navbar = () => {
-  const [language, setLanguage] = useState("EN");
+const Navbar = ({onLanguageChange}) => {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const { language, toggleLanguage } = useLanguage()
+  const translation = translations[language];
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -22,10 +26,6 @@ const Navbar = () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
-
-  const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "EN" ? "DE" : "EN"));
-  };
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -97,7 +97,7 @@ const Navbar = () => {
               to={buildHashLink("events")}
               onClick={() => setMenuOpen(false)}
             >
-              Events
+              {translation.navbar.events}
             </HashLink>
           </li>
           <li>
@@ -105,7 +105,7 @@ const Navbar = () => {
               to={buildHashLink("about")}
               onClick={() => setMenuOpen(false)}
             >
-              About
+              {translation.navbar.about}
             </HashLink>
           </li>
           <li>
@@ -113,17 +113,17 @@ const Navbar = () => {
               to={buildHashLink("open-mic")}
               onClick={() => setMenuOpen(false)}
             >
-              Stand-up
+              {translation.navbar.standUp}
             </HashLink>
           </li>
           <li>
             <Link to="/contact" onClick={() => setMenuOpen(false)}>
-              Contact
+              {translation.navbar.contact}
             </Link>
           </li>
           <li>
             <Link to="/faq" onClick={() => setMenuOpen(false)}>
-              FAQ
+              {translation.navbar.faq}
             </Link>
           </li>
         </ul>
@@ -136,7 +136,7 @@ const Navbar = () => {
             aria-label="Toggle Language"
           >
             <GlobeIcon className="icon" role="img" aria-hidden="true" focusable="false" />
-            <span className="language-code">{language}</span>
+            <span className="language-code">{language.toUpperCase()}</span>
           </button>
 
           <button type="button" className="svg-buttons" aria-label="Login">

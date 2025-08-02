@@ -4,6 +4,8 @@ import Email from "../../assets/svg/Contact_svg/Email.svg";
 import WhatsApp from "../../assets/svg/Contact_svg/WhatsApp.svg";
 import Location from "../../assets/svg/Contact_svg/Location.svg";
 import "./contact.css";
+import { useLanguage } from "../../context/language.context";
+import translations  from "../../translations";
 
 const CONTACT_LINKS_TOP = [
   {
@@ -35,6 +37,8 @@ const CONTACT_LINK_LOCATION = {
 };
 
 const Contact = () => {
+  const { language } = useLanguage()
+  const translation = translations[language];
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -62,28 +66,26 @@ const Contact = () => {
 
   const validateForm = () => {
     const errors = {};
-    if (!form.name.trim()) errors.name = "Name is required.";
+    if (!form.name.trim()) errors.name = translation.contactPage.validationErrors.nameRequired;
     if (!form.email.trim()) {
-      errors.email = "Email is required.";
+      errors.email = translation.contactPage.validationErrors.emailRequired;
     } else if (!/\S+@\S+\.\S+/.test(form.email)) {
-      errors.email = "Email address is invalid.";
+      errors.email = translation.contactPage.validationErrors.emailInvalid;
     }
-    if (!form.phone.trim()) errors.phone = "Phone number is required.";
+    if (!form.phone.trim()) errors.phone = translation.contactPage.validationErrors.phoneRequired;
     else if (
       !/^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im.test(
         form.phone
       )
     ) {
-      errors.phone = "Phone number is invalid.";
+      errors.phone = translation.contactPage.phoneInvalid;
     }
-    if (!form.message.trim()) errors.message = "Message is required.";
+    if (!form.message.trim()) errors.message = translation.contactPage.validationErrors.messageRequired;
     else if (form.message.trim().length < 10)
-      errors.message = "Message must be at least 10 characters.";
-
+      errors.message = translation.contactPage.validationErrors.messageTooShort;
     setValidationErrors(errors);
     return Object.keys(errors).length === 0;
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -112,11 +114,11 @@ const Contact = () => {
 
   return (
     <div className="contact-section">
-      <h1>Contact us</h1>
+      <h1>{translation.contactUs}</h1>
       <div className="content">
         {submitted ? (
           <div className="response" role="status" aria-live="polite">
-            Thank you for contacting us! We will get back to you soon.
+           {translation.contactPage.thankYouMessage}
           </div>
         ) : (
           <form className="contact-form" onSubmit={handleSubmit} noValidate>
@@ -127,12 +129,12 @@ const Contact = () => {
               </legend>
               <div className="input-row">
                 <label htmlFor="name-input">
-                  Hi I'm
+                  {translation.contactPage.hiIm}
                 </label>
                 <input
                   id="name-input"
                   type="text"
-                  placeholder="name*"
+                  placeholder={translation.contactPage.namePlaceholder}
                   name="name"
                   value={form.name}
                   onChange={handleChange}
@@ -151,12 +153,12 @@ const Contact = () => {
               </div>
               <div className="input-row">
                 <label htmlFor="phone-input">
-                  You can reach me at
+                  {translation.contactPage.youCanReachMeAt}
                 </label>
                 <input
                   id="phone-input"
                   type="tel"
-                  placeholder="phone*"
+                  placeholder={translation.contactPage.phonePlaceholder}
                   name="phone"
                   value={form.phone}
                   onChange={handleChange}
@@ -175,7 +177,7 @@ const Contact = () => {
               </div>
               <div className="input-row">
                 <label htmlFor="email-input">
-                  or at
+                  {translation.contactPage.orAt}
                 </label>
                 <input
                   id="email-input"
@@ -204,7 +206,7 @@ const Contact = () => {
                 <textarea
                   id="message-textarea"
                   aria-label="Message"
-                  placeholder="Message*"
+                  placeholder={translation.contactPage.messagePlaceholder}
                   name="message"
                   value={form.message}
                   onChange={handleChange}
@@ -223,7 +225,7 @@ const Contact = () => {
               </div>
             </fieldset>
             <button className="send-btn" type="submit" disabled={isSubmitting}>
-              {isSubmitting ? "Sending..." : "Send message"}
+              {isSubmitting ? translation.contactPage.sending : translation.contactPage.sendMessage}
               <Send className="send-icon" role="img" aria-label="Send icon" />
             </button>
             {submissionError && (
@@ -234,18 +236,15 @@ const Contact = () => {
           </form>
         )}
         <div className="description">
-          <h3>Planning a special event or celebration? </h3>
+          <h3>{translation.contactPage.planningEventHeading}</h3>
           <p>
-            Look no further than The Comedy Pub!
-            <br /> Our versatile venue is available for private bookings, making
-            it the ideal choice for birthdays, corporate events, and social
-            gatherings. Get in touch with our dedicated events team, and we’ll
-            work closely with you to create a customized experience that will
-            have your guests rolling in the aisles…
+            {translation.contactPage.planningEventHeader}
+            <br />
+            {translation.contactPage.planningEventBody}
           </p>
           <hr className="description-hr" />
           <p>
-            <i>Get in touch with us at:</i>
+            <i>{translation.contactPage.getInTouchWithUsAt}</i>
           </p>
           {CONTACT_LINKS_TOP.map((link) => (
             <a
@@ -259,7 +258,7 @@ const Contact = () => {
             </a>
           ))}
           <p>
-            <i>or come say hello at the pub</i>
+            <i>{translation.contactPage.comeSayHello}</i>
           </p>
           <a
             key={CONTACT_LINK_LOCATION.id}
